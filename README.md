@@ -71,29 +71,39 @@ WHERE
 The following SQL queries were developed to answer specific business questions:
 
 1. **Write a SQL query to retrieve all columns for sales made on '2022-11-05**:
+    ```sql  
     SELECT * 
     FROM retaildata2
     WHERE sale_date = "2022-11-05";
+    ```
 
 2. **Write a SQL query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022**:
+    ```sql  
     SELECT transactions_id
     FROM retaildata2
     WHERE category = "Clothing" AND quantiy < 10 AND Year(sale_date) = 2022 AND MONTH(sale_date) = 11 ; 
+    ```
 
 3. **Write a SQL query to calculate the total sales (total_sale) for each category.**:
+    ```sql  
     SELECT category,SUM(total_sale) AS total_sales,count(*) AS total_orders
     FROM retaildata2
     GROUP BY category;
+    ```
 
 4. **Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.**:
+    ```sql  
     SELECT AVG(age),category
     FROM retaildata2
     WHERE category = "Beauty";
+    ```
 
 5. **Write a SQL query to find all transactions where the total_sale is greater than 1000.**:
+    ```sql  
     SELECT transactions_id,total_sale 
     FROM retaildata2
     WHERE total_sale > 1000;
+    ```
 
 6. **Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category.**:
 ```sql
